@@ -29,6 +29,7 @@ namespace EVEMon.Controls
         private void InitializeComponent()
         {
             this.pbCharacterPortrait = new EVEMon.Common.Controls.CharacterPortrait();
+            this.badge = new System.Windows.Forms.Label();
             this.lblTotalSkillPoints = new EVEMon.Controls.OverviewLabel();
             this.lblExtraInfo = new EVEMon.Controls.OverviewLabel();
             this.lblSkillQueueTrainingTime = new EVEMon.Controls.OverviewLabel();
@@ -49,6 +50,18 @@ namespace EVEMon.Controls
             this.pbCharacterPortrait.TabIndex = 0;
             this.pbCharacterPortrait.TabStop = false;
             // 
+            // badge
+            // 
+            this.badge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.badge.AutoSize = true;
+            this.badge.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.badge.Location = new System.Drawing.Point(86, 86);
+            this.badge.Margin = new System.Windows.Forms.Padding(0);
+            this.badge.Name = "badge";
+            this.badge.Size = new System.Drawing.Size(13, 13);
+            this.badge.TabIndex = 9;
+            this.badge.Text = "0";
+            // 
             // lblTotalSkillPoints
             // 
             this.lblTotalSkillPoints.AutoEllipsis = true;
@@ -61,14 +74,14 @@ namespace EVEMon.Controls
             this.lblTotalSkillPoints.TabIndex = 4;
             this.lblTotalSkillPoints.Text = "100,000,000 SP";
             // 
-            // lblLocation
+            // lblExtraInfo
             // 
             this.lblExtraInfo.AutoEllipsis = true;
             this.lblExtraInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblExtraInfo.Enabled = false;
             this.lblExtraInfo.ForeColor = System.Drawing.Color.DimGray;
             this.lblExtraInfo.Location = new System.Drawing.Point(9, 101);
-            this.lblExtraInfo.Name = "lblLocation";
+            this.lblExtraInfo.Name = "lblExtraInfo";
             this.lblExtraInfo.Size = new System.Drawing.Size(92, 13);
             this.lblExtraInfo.TabIndex = 1;
             this.lblExtraInfo.Text = "Egghelende";
@@ -149,6 +162,7 @@ namespace EVEMon.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.badge);
             this.Controls.Add(this.lblTotalSkillPoints);
             this.Controls.Add(this.lblExtraInfo);
             this.Controls.Add(this.lblSkillQueueTrainingTime);
@@ -162,6 +176,7 @@ namespace EVEMon.Controls
             this.Name = "OverviewItem";
             this.Size = new System.Drawing.Size(330, 120);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +191,6 @@ namespace EVEMon.Controls
         private OverviewLabel lblCompletionTime;
         private OverviewLabel lblSkillQueueTrainingTime;
         private OverviewLabel lblExtraInfo;
+        private System.Windows.Forms.Label badge;
     }
 }

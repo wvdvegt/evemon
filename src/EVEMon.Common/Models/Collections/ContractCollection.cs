@@ -30,10 +30,20 @@ namespace EVEMon.Common.Models.Collections
         /// <param name="src"></param>
         internal void Import(IEnumerable<SerializableContract> src)
         {
-            Items.Clear();
+            //Items.Clear();
+            //foreach (SerializableContract srcContract in src)
+            //{
+            //    Items.Add(new Contract(m_character, srcContract));
+            //}
+
+            //! veg: does this wipe out the other items (corp first wiped by character)? 
             foreach (SerializableContract srcContract in src)
             {
-                Items.Add(new Contract(m_character, srcContract));
+                Contract c = new Contract(m_character, srcContract);
+                if (Items.Count(p => p.ID == c.ID) == 0)
+                {
+                    Items.Add(c);
+                }
             }
         }
 
@@ -76,8 +86,17 @@ namespace EVEMon.Common.Models.Collections
             endedContracts.AddRange(newContracts.Where(newContract => newContract.NeedsAttention));
             // Add the items that are no longer marked for deletion
             newContracts.AddRange(Items.Where(x => !x.MarkedForDeletion));
-            Items.Clear();
-            Items.AddRange(newContracts);
+
+            //! veg: does this wipe out the other items (corp first wiped by character)? 
+            //Items.Clear();
+            //Items.AddRange(newContracts);
+            foreach (Contract c in newContracts)
+            {
+                if (Items.Count(p => p.ID == c.ID) == 0)
+                {
+                    Items.Add(c);
+                }
+            }
         }
 
         /// <summary>

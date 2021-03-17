@@ -213,19 +213,22 @@ namespace EVEMon.XmlGenerator.Datafiles
             InvGroups itemGroup = Database.InvGroupsTable[srcItem.GroupID];
 
             // Creates the item with base information
+            var categories = Database.InvCategoriesTable;
+            int cID = itemGroup.CategoryID;
             SerializableItem item = new SerializableItem
-            {
-                ID = srcItem.ID,
-                Name = srcItem.Name,
-                Description = srcItem.Description ?? string.Empty,
-                Icon = srcItem.IconID.HasValue ? Database.EveIconsTable[srcItem.IconID.
+			{
+				ID = srcItem.ID,
+				Name = srcItem.Name,
+				Description = srcItem.Description ?? string.Empty,
+				Icon = srcItem.IconID.HasValue ? Database.EveIconsTable[srcItem.IconID.
                     Value].Icon : string.Empty,
-                PortionSize = srcItem.PortionSize,
-                MetaGroup = ItemMetaGroup.None,
-                Group = itemGroup.Name,
-                Category = Database.InvCategoriesTable.HasValue(itemGroup.CategoryID) ? Database.InvCategoriesTable[itemGroup.CategoryID].Name : "Error",
-                Race = (Race)Enum.ToObject(typeof(Race), srcItem.RaceID ?? 0)
-            };
+				PortionSize = srcItem.PortionSize,
+				MetaGroup = ItemMetaGroup.None,
+				Group = itemGroup.Name,
+				Category = categories.HasValue(cID) ? Database.InvCategoriesTable[cID].Name :
+                    "",
+				Race = (Race)Enum.ToObject(typeof(Race), srcItem.RaceID ?? 0)
+			};
 
             // Set race to Faction if item race is Jovian or belongs to a Faction market group
             if (item.Race == Race.Jove || (srcItem.MarketGroupID.HasValue &&

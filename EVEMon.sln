@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7B1651B-8895-4254-8EBF-029CBEE3C1E3}"
 EndProject
@@ -43,7 +43,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7AC1A9C-97FC-4937-A8CA-684650A99D01}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		Remote.txt = Remote.txt
 		SharedAssemblyInfo.cs = SharedAssemblyInfo.cs
 		SharedAssemblyInfo.template.cs = SharedAssemblyInfo.template.cs
 	EndProjectSection
@@ -145,8 +144,5 @@ Global
 		{87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0} = {9AB16E7E-E520-4444-8E8E-165129CC93B3}
 		{FD639BF6-3414-4FB2-8325-61744D44F028} = {B2FD94FF-A895-4519-A97F-6DEA32F15F8E}
 		{1917E258-0979-4333-8B20-5D66E8986E1C} = {B2FD94FF-A895-4519-A97F-6DEA32F15F8E}
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F2EAC9D3-7353-4159-B84F-342969D0F04F}
 	EndGlobalSection
 EndGlobal

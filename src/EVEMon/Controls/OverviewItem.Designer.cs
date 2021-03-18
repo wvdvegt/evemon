@@ -74,14 +74,14 @@ namespace EVEMon.Controls
             this.lblTotalSkillPoints.TabIndex = 4;
             this.lblTotalSkillPoints.Text = "100,000,000 SP";
             // 
-            // lblExtraInfo
+            // lblLocation
             // 
             this.lblExtraInfo.AutoEllipsis = true;
             this.lblExtraInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblExtraInfo.Enabled = false;
             this.lblExtraInfo.ForeColor = System.Drawing.Color.DimGray;
             this.lblExtraInfo.Location = new System.Drawing.Point(9, 101);
-            this.lblExtraInfo.Name = "lblExtraInfo";
+            this.lblExtraInfo.Name = "lblLocation";
             this.lblExtraInfo.Size = new System.Drawing.Size(92, 13);
             this.lblExtraInfo.TabIndex = 1;
             this.lblExtraInfo.Text = "Egghelende";

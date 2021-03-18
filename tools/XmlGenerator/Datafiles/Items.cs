@@ -115,8 +115,7 @@ namespace EVEMon.XmlGenerator.Datafiles
             {
                 var group = new SerializableMarketGroup
                 {
-                    ID = marketGroup.ID,
-                    Name = marketGroup.Name
+                    ID = marketGroup.ID, Name = marketGroup.Name
                 };
                 groups[marketGroup.ID] = group;
 

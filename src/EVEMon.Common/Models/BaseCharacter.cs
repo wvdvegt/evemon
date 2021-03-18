@@ -118,8 +118,7 @@ namespace EVEMon.Common.Models
             skill.ThrowIfNull(nameof(skill));
 
             if (skill.PrimaryAttribute == EveAttribute.None || skill.SecondaryAttribute == EveAttribute.None)
-                //! veg replaced by a dummy value (60+30)*20 return 0.0f;
-                return 1800f;
+                return 0.0f;
 
             float primAttr = GetAttribute(skill.PrimaryAttribute).EffectiveValue;
             float secondaryAttr = GetAttribute(skill.SecondaryAttribute).EffectiveValue;

@@ -442,7 +442,6 @@ namespace EVEMon.Common
 
         #endregion
 
-
         #region Diagnostics
 
         /// <summary>

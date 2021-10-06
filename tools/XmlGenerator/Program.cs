@@ -15,6 +15,8 @@ namespace EVEMon.XmlGenerator
 {
     internal static class Program
     {
+        const String db = "sqlite-latest.sqlite";
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -27,27 +29,31 @@ namespace EVEMon.XmlGenerator
             // Setting a standard format for the generated files
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
 
-            //! Download sqlite-latest.sqlite.bz2
+            //! veg: Download sqlite-latest.sqlite.bz2
             //! https://www.fuzzwork.co.uk/dump/sqlite-latest.sqlite.bz2
 
             string basepath = Path.GetFullPath(@".\..\..");
 
-            string decompressedFileName = Path.Combine(basepath, "sqlite-latest.sqlite");
+            string decompressedFileName = Path.Combine(basepath, db);
 
             if (!File.Exists(decompressedFileName))
             {
-                Console.WriteLine("Downloading 'sqlite-latest.sqlite.bz2' from 'www.fuzzwork.co.uk/dump,");
+                Console.WriteLine($"Downloading '{db}.bz2' from 'www.fuzzwork.co.uk/dump/{db}.bz2");
 
                 using (WebClient client = new WebClient())
                 {
-                    client.DownloadFile("https://www.fuzzwork.co.uk/dump/sqlite-latest.sqlite.bz2", Path.Combine(basepath, "sqlite-latest.sqlite.bz2"));
+                    //! veg: Without headers the download fails.
+                    client.Headers.Add("Accept-Encoding", "bz2");
+                    client.Headers.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 Edg/91.0.864.48");
+                    client.Headers.Add("Referrer", "https://www.fuzzwork.co.uk/dump/");
+
+                    client.DownloadFile($"https://www.fuzzwork.co.uk/dump/{db}.bz2", Path.Combine(basepath, $"{db}.bz2"));
                 }
 
-                Console.WriteLine("Decompressing 'sqlite-latest.sqlite.bz2' into 'sqlite-latest.sqlite'");
-
+                Console.WriteLine($"Decompressing '{db}.bz2' into '{db}'");
 
                 //! Decompress dump.
-                FileInfo zipFileName = new FileInfo(Path.Combine(basepath, "sqlite-latest.sqlite.bz2"));
+                FileInfo zipFileName = new FileInfo(Path.Combine(basepath, $"{db}.bz2"));
                 using (FileStream fileToDecompressAsStream = zipFileName.OpenRead())
                 {
                     using (FileStream decompressedStream = File.Create(decompressedFileName))

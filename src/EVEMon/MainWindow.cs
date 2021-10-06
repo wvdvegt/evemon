@@ -1234,7 +1234,8 @@ namespace EVEMon
         /// <param name="e"></param>
         private async void OnDataUpdateAvailable(object sender, DataUpdateAvailableEventArgs e)
         {
-            if (m_isShowingDataUpdateWindow)
+#warning veg: disabled updates
+            //if (m_isShowingDataUpdateWindow)
                 return;
 
             m_isShowingDataUpdateWindow = true;

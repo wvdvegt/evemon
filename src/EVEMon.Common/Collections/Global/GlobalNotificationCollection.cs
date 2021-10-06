@@ -50,28 +50,28 @@ namespace EVEMon.Common.Collections.Global
 
             switch (notification.Behaviour)
             {
-            case NotificationBehaviour.Cohabitate:
-                Items.Add(notification);
-                break;
+                case NotificationBehaviour.Cohabitate:
+                    Items.Add(notification);
+                    break;
 
-            case NotificationBehaviour.Overwrite:
-                // Replace the previous notifications with the same invalidation key
-                InvalidateCore(notification.InvalidationKey);
-                Items.Add(notification);
-                break;
+                case NotificationBehaviour.Overwrite:
+                    // Replace the previous notifications with the same invalidation key
+                    InvalidateCore(notification.InvalidationKey);
+                    Items.Add(notification);
+                    break;
 
-            case NotificationBehaviour.Merge:
-                // Merge the notifications with the same key
-                long key = notification.InvalidationKey;
-                foreach (NotificationEventArgs other in Items.Where(x => x.InvalidationKey == key))
-                {
-                    notification.Append(other);
-                }
+                case NotificationBehaviour.Merge:
+                    // Merge the notifications with the same key
+                    long key = notification.InvalidationKey;
+                    foreach (NotificationEventArgs other in Items.Where(x => x.InvalidationKey == key))
+                    {
+                        notification.Append(other);
+                    }
 
-                // Replace the previous notifications with the same invalidation key
-                InvalidateCore(key);
-                Items.Add(notification);
-                break;
+                    // Replace the previous notifications with the same invalidation key
+                    InvalidateCore(key);
+                    Items.Add(notification);
+                    break;
             }
 
             EveMonClient.OnNotificationSent(notification);
@@ -111,7 +111,6 @@ namespace EVEMon.Common.Collections.Global
             // Did we remove anything
             return foundAny;
         }
-
 
         #region API Server error
 
@@ -1202,17 +1201,17 @@ namespace EVEMon.Common.Collections.Global
             string text = string.Empty;
             switch (status)
             {
-            case ServerStatus.Offline:
-                text = $"{serverName} is offline.";
-                break;
-            case ServerStatus.Online:
-                text = $"{serverName} is online.";
-                break;
-            case ServerStatus.CheckDisabled:
-            case ServerStatus.Unknown:
-                break;
-            default:
-                throw new NotImplementedException();
+                case ServerStatus.Offline:
+                    text = $"{serverName} is offline.";
+                    break;
+                case ServerStatus.Online:
+                    text = $"{serverName} is online.";
+                    break;
+                case ServerStatus.CheckDisabled:
+                case ServerStatus.Unknown:
+                    break;
+                default:
+                    throw new NotImplementedException();
             }
 
             if (!string.IsNullOrEmpty(text))
@@ -1341,6 +1340,28 @@ namespace EVEMon.Common.Collections.Global
         #region Industry jobs completion
 
         /// <summary>
+        /// Invalidate character planetary pin completed.
+        /// </summary>
+        ///
+        /// <param name="character"> The character. </param>
+        internal void InvalidateCharacterIndustryCompleted(CCPCharacter character)
+        {
+#warning INDUSTRY NOTIFICATION FIX
+            Invalidate(new NotificationInvalidationEventArgs(character, NotificationCategory.IndustryJobsCompletion));
+        }
+
+        /// <summary>
+        /// Invalidate character industry completed.
+        /// </summary>
+        ///
+        /// <param name="character"> The character. </param>
+        internal void InvalidateCorporationIndustryCompleted(CCPCharacter character)
+        {
+#warning INDUSTRY NOTIFICATION FIX
+            Invalidate(new NotificationInvalidationEventArgs(character, NotificationCategory.IndustryJobsCompletion));
+        }
+
+        /// <summary>
         /// Notify some character industry jobs have ended.
         /// </summary>
         /// <param name="character">The character.</param>
@@ -1348,8 +1369,10 @@ namespace EVEMon.Common.Collections.Global
         internal void NotifyCharacterIndustryJobCompletion(Character character,
             IEnumerable<IndustryJob> jobsCompleted)
         {
-            var notification = new IndustryJobsNotificationEventArgs(character, jobsCompleted)
+            //xx
+            var notification = new CharacterIndustryJobsNotificationEventArgs(character, jobsCompleted)
             {
+                // veg: was merge
                 Behaviour = NotificationBehaviour.Merge,
                 Priority = NotificationPriority.Information
             };
@@ -1364,8 +1387,10 @@ namespace EVEMon.Common.Collections.Global
         internal void NotifyCorporationIndustryJobCompletion(Corporation corporation,
             IEnumerable<IndustryJob> jobsCompleted)
         {
-            var notification = new IndustryJobsNotificationEventArgs(corporation, jobsCompleted)
+            //xx
+            var notification = new CorporateIndustryJobsNotificationEventArgs(corporation, jobsCompleted)
             {
+                // veg: was merge
                 Behaviour = NotificationBehaviour.Merge,
                 Priority = NotificationPriority.Information
             };

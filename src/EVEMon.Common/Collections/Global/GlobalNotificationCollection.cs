@@ -1366,36 +1366,18 @@ namespace EVEMon.Common.Collections.Global
         /// </summary>
         /// <param name="character">The character.</param>
         /// <param name="jobsCompleted">The completed jobs.</param>
-        internal void NotifyCharacterIndustryJobCompletion(Character character,
+        internal void NotifyIndustryJobCompletion(Character character,
             IEnumerable<IndustryJob> jobsCompleted)
         {
             //xx
-            var notification = new CharacterIndustryJobsNotificationEventArgs(character, jobsCompleted)
+            var notification = new IndustryJobsNotificationEventArgs(character, jobsCompleted)
             {
                 // veg: was merge
                 Behaviour = NotificationBehaviour.Merge,
                 Priority = NotificationPriority.Information
             };
             Notify(notification);
-        }
-
-        /// <summary>
-        /// Notify some corporation industry jobs have ended.
-        /// </summary>
-        /// <param name="corporation">The corporation.</param>
-        /// <param name="jobsCompleted">The completed jobs.</param>
-        internal void NotifyCorporationIndustryJobCompletion(Corporation corporation,
-            IEnumerable<IndustryJob> jobsCompleted)
-        {
-            //xx
-            var notification = new CorporateIndustryJobsNotificationEventArgs(corporation, jobsCompleted)
-            {
-                // veg: was merge
-                Behaviour = NotificationBehaviour.Merge,
-                Priority = NotificationPriority.Information
-            };
-            Notify(notification);
-        }
+        }  
 
         #endregion
 

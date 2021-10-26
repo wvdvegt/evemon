@@ -9,7 +9,7 @@ namespace EVEMon.Common.Notifications
     /// <summary>
     /// Provides notification services for Character IndustryJobs.
     /// </summary>
-    public sealed class CharacterIndustryJobsNotificationEventArgs : NotificationEventArgs
+    public sealed class IndustryJobsNotificationEventArgs : NotificationEventArgs
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IndustryJobsNotificationEventArgs"/> class.
@@ -17,7 +17,7 @@ namespace EVEMon.Common.Notifications
         /// <param name="sender">The sender.</param>
         /// <param name="jobs">The jobs.</param>
         /// <exception cref="System.ArgumentNullException">jobs</exception>
-        public CharacterIndustryJobsNotificationEventArgs(object sender, IEnumerable<IndustryJob> jobs)
+        public IndustryJobsNotificationEventArgs(object sender, IEnumerable<IndustryJob> jobs)
             : base(sender, NotificationCategory.IndustryJobsCompletion)
         {
             jobs.ThrowIfNull(nameof(jobs));
@@ -46,7 +46,7 @@ namespace EVEMon.Common.Notifications
         /// <param name="other"></param>
         public override void Append(NotificationEventArgs other)
         {
-            foreach (IndustryJob job in ((CharacterIndustryJobsNotificationEventArgs)other).Jobs)
+            foreach (IndustryJob job in ((IndustryJobsNotificationEventArgs)other).Jobs)
             {
                 Jobs.Add(job);
             }
@@ -59,64 +59,7 @@ namespace EVEMon.Common.Notifications
         /// </summary>
         private void UpdateDescription()
         {
-            Description = $"{Jobs.Count} personal industry job{(Jobs.Count > 1 ? "s" : string.Empty)} completed.";
-        }
-    }
-
-    /// <summary>
-    /// Provides notification services for corporate IndustryJobs.
-    /// </summary>
-    public sealed class CorporateIndustryJobsNotificationEventArgs : NotificationEventArgs
-    { 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IndustryJobsNotificationEventArgs"/> class.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="jobs">The jobs.</param>
-        /// <exception cref="System.ArgumentNullException">jobs</exception>
-        public CorporateIndustryJobsNotificationEventArgs(object sender, IEnumerable<IndustryJob> jobs)
-            : base(sender, NotificationCategory.IndustryJobsCompletion)
-        {
-            jobs.ThrowIfNull(nameof(jobs));
-
-            Jobs = new Collection<IndustryJob>();
-            foreach (IndustryJob job in jobs)
-            {
-                Jobs.Add(job);
-            }
-            UpdateDescription();
-        }
-
-        /// <summary>
-        /// Gets the associated API result.
-        /// </summary>
-        public Collection<IndustryJob> Jobs { get; }
-
-        /// <summary>
-        /// Gets true if the notification has details.
-        /// </summary>
-        public override bool HasDetails => true;
-
-        /// <summary>
-        /// Enqueue the jobs from the given notification at the end of this notification.
-        /// </summary>
-        /// <param name="other"></param>
-        public override void Append(NotificationEventArgs other)
-        {
-            foreach (IndustryJob job in ((CorporateIndustryJobsNotificationEventArgs)other).Jobs)
-            {
-                Jobs.Add(job);
-            }
-
-            UpdateDescription();
-        }
-
-        /// <summary>
-        /// Updates the description.
-        /// </summary>
-        private void UpdateDescription()
-        {
-            Description = $"{Jobs.Count} corporate industry job{(Jobs.Count > 1 ? "s" : string.Empty)} completed.";
+            Description = $"{Jobs.Count} industry job{(Jobs.Count > 1 ? "s" : string.Empty)} completed.";
         }
     }
 }

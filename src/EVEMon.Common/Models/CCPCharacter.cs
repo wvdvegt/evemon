@@ -899,7 +899,7 @@ namespace EVEMon.Common.Models
                 if (!CorporationIndustryJobs.Any(job => job.ActiveJobState ==
                         ActiveJobState.Ready && !job.NotificationSend))
                 {
-                    EveMonClient.Notifications.NotifyCharacterIndustryJobCompletion(this,
+                    EveMonClient.Notifications.NotifyIndustryJobCompletion(this,
                         m_jobsCompletedForCharacter);
 
                     // Now that we have send the notification clear the list

@@ -182,7 +182,7 @@
     <comment>600</comment>
   </data>
   <data name="ESICharacterSheet" xml:space="preserve">
-    <value>/v4/characters/{0:D}/</value>
+    <value>/v5/characters/{0:D}/</value>
     <comment>3600</comment>
   </data>
   <data name="ESIStandings" xml:space="preserve">

@@ -329,7 +329,8 @@ namespace EVEMon.Controls
                 // Did the click on the "delete" icon or did a wheel/right-click?
                 Rectangle deleteRect = GetDeleteIconRect(rect);
                 if (e.Button == MouseButtons.Middle || e.Button == MouseButtons.Right ||
-                        deleteRect.Contains(e.Location)) {
+                        deleteRect.Contains(e.Location))
+                {
                     EveMonClient.Notifications.Invalidate(new NotificationInvalidationEventArgs(notification));
                     m_notifications.Remove(notification);
                     UpdateContent();
@@ -462,33 +463,16 @@ namespace EVEMon.Controls
             }
 
             // Industry jobs ?
+            IndustryJobsNotificationEventArgs jobsNotification = notification as IndustryJobsNotificationEventArgs;
+            if (jobsNotification != null)
             {
-                CharacterIndustryJobsNotificationEventArgs jobsNotification = notification as CharacterIndustryJobsNotificationEventArgs;
-                if (jobsNotification != null)
-                {
-                    IndustryJobsWindow window =
-                        WindowsFactory.ShowByTag<IndustryJobsWindow, CharacterIndustryJobsNotificationEventArgs>(jobsNotification);
-                    window.Jobs = jobsNotification.Jobs;
-                    window.Columns = Settings.UI.MainWindow.IndustryJobs.Columns;
-                    window.Grouping = IndustryJobGrouping.State;
-                    window.ShowIssuedFor = IssuedFor.All;
-                    return;
-                }
-            }
-
-            // Industry jobs ?
-            {
-                CorporateIndustryJobsNotificationEventArgs jobsNotification = notification as CorporateIndustryJobsNotificationEventArgs;
-                if (jobsNotification != null)
-                {
-                    IndustryJobsWindow window =
-                        WindowsFactory.ShowByTag<IndustryJobsWindow, CorporateIndustryJobsNotificationEventArgs>(jobsNotification);
-                    window.Jobs = jobsNotification.Jobs;
-                    window.Columns = Settings.UI.MainWindow.IndustryJobs.Columns;
-                    window.Grouping = IndustryJobGrouping.State;
-                    window.ShowIssuedFor = IssuedFor.All;
-                    return;
-                }
+                IndustryJobsWindow window =
+                    WindowsFactory.ShowByTag<IndustryJobsWindow, IndustryJobsNotificationEventArgs>(jobsNotification);
+                window.Jobs = jobsNotification.Jobs;
+                window.Columns = Settings.UI.MainWindow.IndustryJobs.Columns;
+                window.Grouping = IndustryJobGrouping.State;
+                window.ShowIssuedFor = IssuedFor.All;
+                return;
             }
 
             // Planetary pins ?
@@ -548,19 +532,9 @@ namespace EVEMon.Controls
                 return;
             }
 
-            // Character Industry jobs ?
+            // Industry jobs ?
             {
-                CharacterIndustryJobsNotificationEventArgs jobsNotification = notification as CharacterIndustryJobsNotificationEventArgs;
-                if (jobsNotification != null)
-                {
-                    SetToolTip(IndustryJobsCompletedMessage(jobsNotification));
-                    return;
-                }
-            }
-
-            // Corporate Industry jobs ?
-            { 
-                CorporateIndustryJobsNotificationEventArgs jobsNotification = notification as CorporateIndustryJobsNotificationEventArgs;
+                IndustryJobsNotificationEventArgs jobsNotification = notification as IndustryJobsNotificationEventArgs;
                 if (jobsNotification != null)
                 {
                     SetToolTip(IndustryJobsCompletedMessage(jobsNotification));
@@ -709,25 +683,7 @@ namespace EVEMon.Controls
         /// </summary>
         /// <param name="jobsNotification">The <see cref="EVEMon.Common.Notifications.IndustryJobsNotificationEventArgs"/> instance containing the event data.</param>
         /// <returns></returns>
-        private static string IndustryJobsCompletedMessage(CharacterIndustryJobsNotificationEventArgs jobsNotification)
-        {
-            StringBuilder builder = new StringBuilder();
-            foreach (IndustryJob job in jobsNotification.Jobs)
-                if (job.InstalledItem != null)
-                {
-                    string name = job.SolarSystem?.Name ?? EveMonConstants.UnknownText;
-                    builder.Append(job.InstalledItem.Name).Append(" at ").Append(
-                        $"{name} > {job.Installation}").AppendLine();
-                }
-            return builder.ToString();
-        }
-
-        /// <summary>
-        /// Builds the completed industry jobs message.
-        /// </summary>
-        /// <param name="jobsNotification">The <see cref="EVEMon.Common.Notifications.IndustryJobsNotificationEventArgs"/> instance containing the event data.</param>
-        /// <returns></returns>
-        private static string IndustryJobsCompletedMessage(CorporateIndustryJobsNotificationEventArgs jobsNotification)
+        private static string IndustryJobsCompletedMessage(IndustryJobsNotificationEventArgs jobsNotification)
         {
             StringBuilder builder = new StringBuilder();
             foreach (IndustryJob job in jobsNotification.Jobs)

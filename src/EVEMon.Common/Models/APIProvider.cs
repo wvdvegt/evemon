@@ -152,6 +152,7 @@ namespace EVEMon.Common.Models
             long id = data.ParamOne;
             string paramStr = string.IsNullOrEmpty(data.GetData) ? data.ParamTwo.ToString(
                 CultureConstants.InvariantCulture) : data.GetData;
+#warning INDUSTRY CODE
             string path = string.Format(GetESIMethod(requestMethod).Path, id, paramStr);
             
             // Build the URI

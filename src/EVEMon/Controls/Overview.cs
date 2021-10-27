@@ -167,7 +167,7 @@ namespace EVEMon.Controls
 
                 Int32 badgeCount = EveMonClient.Notifications.Where(p => character.Equals(p.SenderCharacter) && p.Category != NotificationCategory.MarketOrdersEnding).Distinct().Count();
 
-                System.Diagnostics.Debug.WriteLine($"{character.Name} - {badgeCount}");
+                //System.Diagnostics.Debug.WriteLine($"{character.Name} - {badgeCount}");
                 Label badge = (Label)overviewItems[index].Controls.Find("badge", true)[0];
 
                 badge.Visible = badgeCount != 0;

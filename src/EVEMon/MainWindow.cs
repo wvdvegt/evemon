@@ -114,6 +114,8 @@ namespace EVEMon
                 DisplayTestMenu();
 
             m_startMinimized = Environment.GetCommandLineArgs().Contains("-startMinimized");
+
+            m_isShowingDataUpdateWindow = false;
         }
 
         /// <summary>

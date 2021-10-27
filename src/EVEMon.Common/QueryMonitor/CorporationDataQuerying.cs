@@ -51,6 +51,7 @@ namespace EVEMon.Common.QueryMonitor
                 EveMonClient.Notifications.NotifyCorporationContractsError)
                 { QueryOnStartup = true });
             m_corporationQueryMonitors.Add(m_corpContractsMonitor);
+#warning INDUSTRY CODE
             m_corpIndustryJobsMonitor = new PagedQueryMonitor<EsiAPIIndustryJobs,
                 EsiJobListItem>(new CorporationQueryMonitor<EsiAPIIndustryJobs>(
                 ccpCharacter, ESIAPICorporationMethods.CorporationIndustryJobs,

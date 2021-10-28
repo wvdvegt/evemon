@@ -1341,6 +1341,16 @@ namespace EVEMon.Common.Collections.Global
         #region Industry jobs completion
 
         /// <summary>
+        /// Invalidates the notification for completed industry hobs.
+        /// </summary>
+        /// <param name="character">The character.</param>
+        internal void InvalidateIndustryJobsCompleted(CCPCharacter character)
+        {
+            Invalidate(new NotificationInvalidationEventArgs(character, NotificationCategory.
+                IndustryJobsCompletion));
+        }
+
+        /// <summary>
         /// Notify some character industry jobs have ended.
         /// </summary>
         /// <param name="character"> The character. </param>

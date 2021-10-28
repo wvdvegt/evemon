@@ -654,6 +654,10 @@ namespace EVEMon.Common.QueryMonitor
             // Character may have been deleted since we queried
             if (target != null)
             {
+#warning INDUSTRY NOTIFICATION FIX
+                // Invalidate previous notifications
+                //EveMonClient.Notifications.InvalidateIndustryJobsCompleted(target);
+
                 target.CharacterIndustryJobs.Import(result, IssuedFor.Character);
                 EveMonClient.OnCharacterIndustryJobsUpdated(target);
             }

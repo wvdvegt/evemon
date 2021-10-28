@@ -31,14 +31,14 @@ namespace EVEMon
         [STAThread]
         private static void Main()
         {
-            StartupAsync();//.Wait();
+            StartupAsync().Wait();
         }
 
         /// <summary>
         /// Starts up the application asynchronously.
         /// </summary>
         /// <returns></returns>
-        private static /*async Task*/ void StartupAsync()
+        private static async Task StartupAsync()
         {
             // Quits if another instance already exists
             if (!IsInstanceUnique)
@@ -90,9 +90,9 @@ namespace EVEMon
                 EveMonClient.Trace("Main loop - done", printMethod: false);
 
                 // Save before we quit
-                //await Task.WhenAll(Settings.SaveImmediateAsync(), EveIDToName.SaveImmediateAsync());
-                Settings.SaveImmediateAsync().Wait();
-                EveIDToName.SaveImmediateAsync().Wait();
+                await Task.WhenAll(Settings.SaveImmediateAsync(), EveIDToName.SaveImmediateAsync());
+                //Settings.SaveImmediateAsync().Wait();
+                //EveIDToName.SaveImmediateAsync().Wait();
             }
             finally
             {

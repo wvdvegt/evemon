@@ -1087,7 +1087,7 @@ namespace EVEMon.Common.Constants {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.pool.ntp.org.
+        ///   Looks up a localized string similar to pool.ntp.org.
         /// </summary>
         public static string GlobalNTPPool {
             get {

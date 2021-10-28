@@ -480,7 +480,7 @@
     <comment>3600</comment>
   </data>
   <data name="GlobalNTPPool" xml:space="preserve">
-    <value>0.pool.ntp.org</value>
+    <value>pool.ntp.org</value>
   </data>
   <data name="ESIBase" xml:space="preserve">
     <value>https://esi.evetech.net</value>

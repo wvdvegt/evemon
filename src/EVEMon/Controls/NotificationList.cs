@@ -532,12 +532,12 @@ namespace EVEMon.Controls
             }
 
             // Industry jobs ?
-            IndustryJobsNotificationEventArgs jobsNotification = notification as IndustryJobsNotificationEventArgs;
-            if (jobsNotification != null)
-            {
-                SetToolTip(IndustryJobsCompletedMessage(jobsNotification));
-                return;
-            }
+                IndustryJobsNotificationEventArgs jobsNotification = notification as IndustryJobsNotificationEventArgs;
+                if (jobsNotification != null)
+                {
+                    SetToolTip(IndustryJobsCompletedMessage(jobsNotification));
+                    return;
+                }
 
             // Planetary pins ?
             PlanetaryPinsNotificationEventArgs pinsNotification = notification as PlanetaryPinsNotificationEventArgs;

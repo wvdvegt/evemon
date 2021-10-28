@@ -268,7 +268,7 @@ namespace EVEMon.Common.Constants {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /v4/characters/{0:D}/.
+        ///   Looks up a localized string similar to /v5/characters/{0:D}/.
         /// </summary>
         public static string ESICharacterSheet {
             get {

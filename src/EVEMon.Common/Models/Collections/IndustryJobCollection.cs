@@ -163,9 +163,9 @@ namespace EVEMon.Common.Models.Collections
                     else
                         // Fire event for character job completion
                         EveMonClient.OnCharacterIndustryJobsCompleted(m_ccpCharacter,
-                            jobsCompleted);
+                                jobsCompleted);
+                    }
                 }
             }
         }
     }
-}

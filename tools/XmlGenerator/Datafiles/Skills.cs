@@ -159,6 +159,32 @@ namespace EVEMon.XmlGenerator.Datafiles
                 }
 
                 // Add skill
+                if (skillID == DBConstants.FleetCoordinationSkillID)
+                {
+                    singleSkill.Description = "Advanced fleet support skill allowing commanders to increase the size and spread of their fleet formations. Unlocks additional formation scaling options at each level of training.";
+                    singleSkill.Rank = 8;
+                    singleSkill.Cost = 40000000L;
+                    singleSkill.PrimaryAttribute = EveAttribute.Charisma;
+                    singleSkill.SecondaryAttribute = EveAttribute.Willpower;
+                    singleSkill.AlphaLimit = 0;
+                    singleSkill.SkillPrerequisites.Add(l5);
+                    singleSkill.SkillPrerequisites.Add(new SerializableSkillPrerequisite()
+                    {
+                        ID = DBConstants.FleetFormationsSkillID,
+                        Level = 1,
+                        Name = Database.InvTypesTable[DBConstants.FleetFormationsSkillID].Name
+                    });
+                }
+                else if (skillID == DBConstants.FleetFormationsSkillID)
+                {
+                    singleSkill.Description = "Fleet support skill allowing commanders to organize and warp fleets in formation. Unlocks additional formation types at each level of training.";
+                    singleSkill.Rank = 5;
+                    singleSkill.Cost = 40000000L;
+                    singleSkill.PrimaryAttribute = EveAttribute.Charisma;
+                    singleSkill.SecondaryAttribute = EveAttribute.Willpower;
+                    singleSkill.AlphaLimit = 0;
+                    singleSkill.SkillPrerequisites.Add(l5);
+                }
                 listOfSkillsInGroup.Add(singleSkill);
             }
             return listOfSkillsInGroup;

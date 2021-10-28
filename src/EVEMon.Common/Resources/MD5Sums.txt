@@ -1,8 +1,14 @@
-df91ac86ac9954dfaff13ab77681a1cc *eve-blueprints-en-US.xml.gzip
+c3e6655e8322fa6f3cf0632fe60786c9 *eve-blueprints-en-US.xml.gzip
 540000f7c111354769a54fa31e57d411 *eve-certificates-en-US.xml.gzip
-3077e700023d84a267b744a6ee44acc7 *eve-geography-en-US.xml.gzip
-4c9cb667e22421fad8ca08777be7fd8a *eve-items-en-US.xml.gzip
+0d58b21ab445f316241589ef91fffc24 *eve-geography-en-US.xml.gzip
+e4c1c54c78c0fa96ab5f794f910f9fec *eve-items-en-US.xml.gzip
 3668b50996fc40a0c0853fec427b5712 *eve-masteries-en-US.xml.gzip
+<<<<<<< HEAD
 1f6ae9f613fd26b08d5ec206d0958d79 *eve-properties-en-US.xml.gzip
 adb83f4fc55f61a58548dcb924a91cfe *eve-reprocessing-en-US.xml.gzip
 727a781211b138cf331afed346692962 *eve-skills-en-US.xml.gzip
+=======
+61b82db0e043794f29e2c743ea8342ce *eve-properties-en-US.xml.gzip
+0e841f8ae3f5a3b2a72bed26aa395a91 *eve-reprocessing-en-US.xml.gzip
+2a5dc71d4ee37f93aed9462335a0be26 *eve-skills-en-US.xml.gzip
+>>>>>>> temp_vegt2

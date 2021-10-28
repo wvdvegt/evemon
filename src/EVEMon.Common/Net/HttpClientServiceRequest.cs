@@ -117,9 +117,19 @@ namespace EVEMon.Common.Net
             {
                 response.StatusCode = HttpStatusCode.OK;
                 response.ReasonPhrase = "OK";
-            } else if (code != HttpStatusCode.NotModified)
+            }
+            else if (code != HttpStatusCode.NotModified)
+            {
+                if (response.RequestMessage.RequestUri.ToString().StartsWith(NetworkConstants.ESIBase) && !response.IsSuccessStatusCode)
+                {
+                    String body = response.Content.ReadAsStringAsync().Result;
+
+                    EveMonClient.Trace($"Request: {response.RequestMessage.RequestUri} returned: {(Int32)response.StatusCode} ({response.ReasonPhrase}) with content: '{body}'.", printMethod: false);
+                }
+
                 // Allow "not modified" so that it will be detected by the front end
                 response.EnsureSuccessStatusCode();
+            }
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-#define HAMMERTIME
+#undef HAMMERTIME
 
 using EVEMon.Common.Constants;
 using EVEMon.Common.Data;

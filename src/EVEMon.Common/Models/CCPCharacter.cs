@@ -866,7 +866,7 @@ namespace EVEMon.Common.Models
             if (e.Character == this && (m_corporationDataQuerying?.
                     CorporationIndustryJobsQueried ?? true))
                 NotifyForIndustryJobsRelatedEvents();
-        }
+            }
 
         /// <summary>
         /// Handles the CorporationIndustryJobsUpdated event of the EveMonClient control.
@@ -878,7 +878,7 @@ namespace EVEMon.Common.Models
             if (e.Character == this && (m_characterDataQuerying?.
                     CharacterIndustryJobsQueried ?? true))
                 NotifyForIndustryJobsRelatedEvents();
-        }
+            }
 
         /// <summary>
         /// Handles the CharacterIndustryJobsCompleted event of the EveMonClient control.

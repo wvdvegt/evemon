@@ -16,6 +16,10 @@ namespace EVEMon.Common.Controls
         public NoFlickerListBox() : base()
         {
             pointerDown = DateTime.MinValue;
+
+#warning VEG EXPERIMENT set doublebuffered to true.
+
+            DoubleBuffered = true;
         }
 
         /// <summary>
@@ -42,7 +46,7 @@ namespace EVEMon.Common.Controls
                 NativeMethods.CopyGraphics(e.Graphics, e.Bounds, bufferedGraphics.Graphics, new Point(0, 0));
             }
         }
-        
+
         /// <summary>
         /// The list's window procedure.
         /// </summary>
@@ -51,39 +55,44 @@ namespace EVEMon.Common.Controls
         {
             switch (m.Msg)
             {
-            case NativeMethods.WM_ERASEBKGND:
-                PaintNonItemRegion();
-                m.Msg = NativeMethods.WM_NULL;
-                break;
-            case NativeMethods.WM_POINTERDOWN:
-                uint id = (uint)m.WParam & NativeMethods.PT_POINTERID_MASK;
-                if (NativeMethods.GetPointerType(id, out int pPointerType))
-                {
-                    if (pPointerType == NativeMethods.PT_TOUCH)
-                        // Touch press down
-                        pointerDown = DateTime.UtcNow;
-                    else
-                        pointerDown = DateTime.MinValue;
-                    // Handle the event
+                case NativeMethods.WM_ERASEBKGND:
+                    PaintNonItemRegion();
                     m.Msg = NativeMethods.WM_NULL;
-                    m.Result = new IntPtr(1);
-                } else
-                    pointerDown = DateTime.MinValue;
-                break;
-            case NativeMethods.WM_POINTERUP:
-                // Check for tap and hold
-                if (DateTime.UtcNow.Subtract(pointerDown).TotalMilliseconds >= TOUCH_HOLD_TIME)
-                {
-                    // Extract position from the event and convert to control coordinates
-                    var pos = PointToClient(new Point(m.LParam.ToInt32()));
-                    OnMouseDown(new MouseEventArgs(MouseButtons.Right, 1, pos.X, pos.Y, 0));
-                }
-                // Handle the event
-                m.Msg = NativeMethods.WM_NULL;
-                m.Result = new IntPtr(1);
-                pointerDown = DateTime.MinValue;
-                break;
+                    return;
+                    /*
+                                    case NativeMethods.WM_POINTERDOWN:
+                                        uint id = (uint)m.WParam & NativeMethods.PT_POINTERID_MASK;
+                                        if (NativeMethods.GetPointerType(id, out int pPointerType))
+                                        {
+                                            if (pPointerType == NativeMethods.PT_TOUCH)
+                                                // Touch press down
+                                                pointerDown = DateTime.UtcNow;
+                                            else
+                                                pointerDown = DateTime.MinValue;
+                                            // Handle the event
+                                            m.Msg = NativeMethods.WM_NULL;
+                                            m.Result = new IntPtr(1);
+                                        }
+                                        else
+                                            pointerDown = DateTime.MinValue;
+                                        break;
+                                    case NativeMethods.WM_POINTERUP:
+                                        // Check for tap and hold
+                                        if (DateTime.UtcNow.Subtract(pointerDown).TotalMilliseconds >= TOUCH_HOLD_TIME)
+                                        {
+                                            // Extract position from the event and convert to control coordinates
+                                            var pos = PointToClient(new Point(m.LParam.ToInt32()));
+                                            OnMouseDown(new MouseEventArgs(MouseButtons.Right, 1, pos.X, pos.Y, 0));
+                                        }
+                                        // Handle the event
+                                        m.Msg = NativeMethods.WM_NULL;
+                                        m.Result = new IntPtr(1);
+                                        pointerDown = DateTime.MinValue;
+
+                                        return;
+                    */
             }
+
             base.WndProc(ref m);
         }
 

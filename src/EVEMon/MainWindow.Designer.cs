@@ -250,7 +250,7 @@ namespace EVEMon
             // lblStatus
             // 
             this.lblStatus.Name = "lblStatus";
-			this.lblStatus.Size = new System.Drawing.Size(59, 17);
+            this.lblStatus.Size = new System.Drawing.Size(58, 17);
             this.lblStatus.Text = "EVE Time:";
             // 
             // lblServerStatus
@@ -262,7 +262,7 @@ namespace EVEMon
             // toolStripStatusSpacerLabel
             // 
             this.toolStripStatusSpacerLabel.Name = "toolStripStatusSpacerLabel";
-			this.toolStripStatusSpacerLabel.Size = new System.Drawing.Size(287, 17);
+            this.toolStripStatusSpacerLabel.Size = new System.Drawing.Size(288, 17);
             this.toolStripStatusSpacerLabel.Spring = true;
             // 
             // lblCSSProviderStatus
@@ -542,7 +542,7 @@ namespace EVEMon
             this.secondSeparator,
             this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // charactersComparisonMenuItem
@@ -711,7 +711,7 @@ namespace EVEMon
             this.testTimeoutOneSecToolStripMenuItem,
             this.restartToolStripMenuItem});
             this.testsToolStripMenuItem.Name = "testsToolStripMenuItem";
-			this.testsToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.testsToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.testsToolStripMenuItem.Text = "Te&st";
             this.testsToolStripMenuItem.Visible = false;
             this.testsToolStripMenuItem.DropDownOpening += new System.EventHandler(this.testToolStripMenuItem_DropDownOpening);
@@ -719,42 +719,42 @@ namespace EVEMon
             // exceptionWindowToolStripMenuItem
             // 
             this.exceptionWindowToolStripMenuItem.Name = "exceptionWindowToolStripMenuItem";
-			this.exceptionWindowToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.exceptionWindowToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.exceptionWindowToolStripMenuItem.Text = "Exception Window";
             this.exceptionWindowToolStripMenuItem.Click += new System.EventHandler(this.ExceptionWindowToolStripMenuItem_Click);
             // 
             // exceptionWindowRecursiveExceptionToolStripMenuItem
             // 
             this.exceptionWindowRecursiveExceptionToolStripMenuItem.Name = "exceptionWindowRecursiveExceptionToolStripMenuItem";
-			this.exceptionWindowRecursiveExceptionToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.exceptionWindowRecursiveExceptionToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.exceptionWindowRecursiveExceptionToolStripMenuItem.Text = "Exception Window (Recursive Exception)";
             this.exceptionWindowRecursiveExceptionToolStripMenuItem.Click += new System.EventHandler(this.exceptionWindowRecursiveExceptionToolStripMenuItem_Click);
             // 
             // testNotificationToolStripMenuItem
             // 
             this.testNotificationToolStripMenuItem.Name = "testNotificationToolStripMenuItem";
-			this.testNotificationToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.testNotificationToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.testNotificationToolStripMenuItem.Text = "Notification";
             this.testNotificationToolStripMenuItem.Click += new System.EventHandler(this.testNotificationToolstripMenuItem_Click);
             // 
             // testCharacterNotificationToolStripMenuItem
             // 
             this.testCharacterNotificationToolStripMenuItem.Name = "testCharacterNotificationToolStripMenuItem";
-			this.testCharacterNotificationToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.testCharacterNotificationToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.testCharacterNotificationToolStripMenuItem.Text = "Character Notification";
             this.testCharacterNotificationToolStripMenuItem.Click += new System.EventHandler(this.testCharacterNotificationToolStripMenuItem_Click);
             // 
             // testTimeoutOneSecToolStripMenuItem
             // 
             this.testTimeoutOneSecToolStripMenuItem.Name = "testTimeoutOneSecToolStripMenuItem";
-			this.testTimeoutOneSecToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.testTimeoutOneSecToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.testTimeoutOneSecToolStripMenuItem.Text = "Set Timeout to 1 Second";
             this.testTimeoutOneSecToolStripMenuItem.Click += new System.EventHandler(this.testTimeoutOneSecToolStripMenuItem_Click);
             // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-			this.restartToolStripMenuItem.Size = new System.Drawing.Size(287, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(289, 22);
             this.restartToolStripMenuItem.Text = "Restart";
             this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
@@ -790,7 +790,7 @@ namespace EVEMon
             this.tsbAbout});
             this.mainToolBar.Location = new System.Drawing.Point(0, 24);
             this.mainToolBar.Name = "mainToolBar";
-			this.mainToolBar.Size = new System.Drawing.Size(600, 25);
+            this.mainToolBar.Size = new System.Drawing.Size(600, 31);
             this.mainToolBar.TabIndex = 5;
             this.mainToolBar.Text = "toolStrip1";
             this.mainToolBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mainToolBar_MouseDown);
@@ -802,7 +802,7 @@ namespace EVEMon
             this.addAPIKeyTbMenu.Image = ((System.Drawing.Image)(resources.GetObject("addAPIKeyTbMenu.Image")));
             this.addAPIKeyTbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addAPIKeyTbMenu.Name = "addAPIKeyTbMenu";
-			this.addAPIKeyTbMenu.Size = new System.Drawing.Size(23, 22);
+            this.addAPIKeyTbMenu.Size = new System.Drawing.Size(28, 28);
             this.addAPIKeyTbMenu.ToolTipText = "Add API key";
             this.addAPIKeyTbMenu.Click += new System.EventHandler(this.addAPIKeyMenu_Click);
             // 
@@ -811,14 +811,14 @@ namespace EVEMon
             this.apiKeysManagementTbMenu.Image = ((System.Drawing.Image)(resources.GetObject("apiKeysManagementTbMenu.Image")));
             this.apiKeysManagementTbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.apiKeysManagementTbMenu.Name = "apiKeysManagementTbMenu";
-			this.apiKeysManagementTbMenu.Size = new System.Drawing.Size(23, 22);
+            this.apiKeysManagementTbMenu.Size = new System.Drawing.Size(28, 28);
             this.apiKeysManagementTbMenu.ToolTipText = "Manage accounts";
             this.apiKeysManagementTbMenu.Click += new System.EventHandler(this.manageAPIKeysMenuItem_Click);
             // 
             // apiKeysSettingsToolStripSeparator
             // 
             this.apiKeysSettingsToolStripSeparator.Name = "apiKeysSettingsToolStripSeparator";
-			this.apiKeysSettingsToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.apiKeysSettingsToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // manageCharacterTbMenu
             // 
@@ -830,7 +830,7 @@ namespace EVEMon
             this.manageCharacterTbMenu.Image = ((System.Drawing.Image)(resources.GetObject("manageCharacterTbMenu.Image")));
             this.manageCharacterTbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.manageCharacterTbMenu.Name = "manageCharacterTbMenu";
-			this.manageCharacterTbMenu.Size = new System.Drawing.Size(29, 22);
+            this.manageCharacterTbMenu.Size = new System.Drawing.Size(37, 28);
             this.manageCharacterTbMenu.Text = "Manage Character";
             this.manageCharacterTbMenu.ToolTipText = "Manage Character";
             // 
@@ -838,7 +838,7 @@ namespace EVEMon
             // 
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-			this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItem1.Text = "&Delete Character...";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.deleteCharacterMenu_Click);
             // 
@@ -846,7 +846,7 @@ namespace EVEMon
             // 
             this.toolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem2.Image")));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-			this.toolStripMenuItem2.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItem2.Text = "&Export Character...";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.saveCharacterInfosMenuItem_Click);
             // 
@@ -854,14 +854,14 @@ namespace EVEMon
             // 
             this.toolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem3.Image")));
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-			this.toolStripMenuItem3.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(171, 22);
             this.toolStripMenuItem3.Text = "&Hide Character";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.hideCharacterMenu_Click);
             // 
             // manageCharacterToolStripSeparator
             // 
             this.manageCharacterToolStripSeparator.Name = "manageCharacterToolStripSeparator";
-			this.manageCharacterToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.manageCharacterToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // tsdbSettings
             // 
@@ -872,7 +872,7 @@ namespace EVEMon
             this.tsdbSettings.Image = ((System.Drawing.Image)(resources.GetObject("tsdbSettings.Image")));
             this.tsdbSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsdbSettings.Name = "tsdbSettings";
-			this.tsdbSettings.Size = new System.Drawing.Size(29, 22);
+            this.tsdbSettings.Size = new System.Drawing.Size(37, 28);
             this.tsdbSettings.Text = "tsddbSettings";
             this.tsdbSettings.ToolTipText = "Save/Restore Settings";
             // 
@@ -895,7 +895,7 @@ namespace EVEMon
             // settingsToolStripSeparator
             // 
             this.settingsToolStripSeparator.Name = "settingsToolStripSeparator";
-			this.settingsToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.settingsToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // clearCacheToolStripButton
             // 
@@ -903,7 +903,7 @@ namespace EVEMon
             this.clearCacheToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("clearCacheToolStripButton.Image")));
             this.clearCacheToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.clearCacheToolStripButton.Name = "clearCacheToolStripButton";
-			this.clearCacheToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.clearCacheToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.clearCacheToolStripButton.Text = "Clear Cache";
             this.clearCacheToolStripButton.Click += new System.EventHandler(this.clearCacheToolStripMenuItem_Click);
             // 
@@ -913,14 +913,14 @@ namespace EVEMon
             this.resetSettingsToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("resetSettingsToolStripButton.Image")));
             this.resetSettingsToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.resetSettingsToolStripButton.Name = "resetSettingsToolStripButton";
-			this.resetSettingsToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.resetSettingsToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.resetSettingsToolStripButton.Text = "Reset Settings";
             this.resetSettingsToolStripButton.Click += new System.EventHandler(this.resetSettingsToolStripMenuItem_Click);
             // 
             // cacheResetToolStripSeparator
             // 
             this.cacheResetToolStripSeparator.Name = "cacheResetToolStripSeparator";
-			this.cacheResetToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.cacheResetToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // exitToolStripButton
             // 
@@ -928,14 +928,14 @@ namespace EVEMon
             this.exitToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("exitToolStripButton.Image")));
             this.exitToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.exitToolStripButton.Name = "exitToolStripButton";
-			this.exitToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.exitToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.exitToolStripButton.Text = "Exit";
             this.exitToolStripButton.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // exitToolStripSeparator
             // 
             this.exitToolStripSeparator.Name = "exitToolStripSeparator";
-			this.exitToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.exitToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // tsbManagePlans
             // 
@@ -943,7 +943,7 @@ namespace EVEMon
             this.tsbManagePlans.Image = ((System.Drawing.Image)(resources.GetObject("tsbManagePlans.Image")));
             this.tsbManagePlans.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbManagePlans.Name = "tsbManagePlans";
-			this.tsbManagePlans.Size = new System.Drawing.Size(23, 22);
+            this.tsbManagePlans.Size = new System.Drawing.Size(28, 28);
             this.tsbManagePlans.Text = "Manage Plans";
             this.tsbManagePlans.Click += new System.EventHandler(this.manageToolStripMenuItem_Click);
             // 
@@ -953,14 +953,14 @@ namespace EVEMon
             this.plansTbMenu.Image = ((System.Drawing.Image)(resources.GetObject("plansTbMenu.Image")));
             this.plansTbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.plansTbMenu.Name = "plansTbMenu";
-			this.plansTbMenu.Size = new System.Drawing.Size(57, 22);
+            this.plansTbMenu.Size = new System.Drawing.Size(57, 28);
             this.plansTbMenu.Text = "Plans...";
             this.plansTbMenu.DropDownOpening += new System.EventHandler(this.tsdbPlans_DropDownOpening);
             // 
             // plansToolStripSeparator
             // 
             this.plansToolStripSeparator.Name = "plansToolStripSeparator";
-			this.plansToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.plansToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // characterComparisonToolStripButton
             // 
@@ -968,14 +968,14 @@ namespace EVEMon
             this.characterComparisonToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("characterComparisonToolStripButton.Image")));
             this.characterComparisonToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.characterComparisonToolStripButton.Name = "characterComparisonToolStripButton";
-			this.characterComparisonToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.characterComparisonToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.characterComparisonToolStripButton.Text = "Character Comparison...";
             this.characterComparisonToolStripButton.Click += new System.EventHandler(this.charactersComparisonToolStripMenuItem_Click);
             // 
             // tsbMineralSheet
             // 
             this.tsbMineralSheet.Name = "tsbMineralSheet";
-			this.tsbMineralSheet.Size = new System.Drawing.Size(23, 22);
+            this.tsbMineralSheet.Size = new System.Drawing.Size(23, 28);
             // 
             // skillsPieChartTbMenu
             // 
@@ -983,14 +983,14 @@ namespace EVEMon
             this.skillsPieChartTbMenu.Image = ((System.Drawing.Image)(resources.GetObject("skillsPieChartTbMenu.Image")));
             this.skillsPieChartTbMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.skillsPieChartTbMenu.Name = "skillsPieChartTbMenu";
-			this.skillsPieChartTbMenu.Size = new System.Drawing.Size(23, 22);
+            this.skillsPieChartTbMenu.Size = new System.Drawing.Size(28, 28);
             this.skillsPieChartTbMenu.Text = "Skill Group Pie Chart...";
             this.skillsPieChartTbMenu.Click += new System.EventHandler(this.tsSkillsPieChartTool_Click);
             // 
             // tsbSchedule
             // 
             this.tsbSchedule.Name = "tsbSchedule";
-			this.tsbSchedule.Size = new System.Drawing.Size(23, 22);
+            this.tsbSchedule.Size = new System.Drawing.Size(23, 28);
             // 
             // tsbImplantGroups
             // 
@@ -998,7 +998,7 @@ namespace EVEMon
             this.tsbImplantGroups.Image = ((System.Drawing.Image)(resources.GetObject("tsbImplantGroups.Image")));
             this.tsbImplantGroups.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImplantGroups.Name = "tsbImplantGroups";
-			this.tsbImplantGroups.Size = new System.Drawing.Size(23, 22);
+            this.tsbImplantGroups.Size = new System.Drawing.Size(28, 28);
             this.tsbImplantGroups.Text = "Implant AllGroups...";
             this.tsbImplantGroups.Click += new System.EventHandler(this.manualImplantGroupsToolStripMenuItem_Click);
             // 
@@ -1008,14 +1008,14 @@ namespace EVEMon
             this.tsbShowOwned.Image = ((System.Drawing.Image)(resources.GetObject("tsbShowOwned.Image")));
             this.tsbShowOwned.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbShowOwned.Name = "tsbShowOwned";
-			this.tsbShowOwned.Size = new System.Drawing.Size(23, 22);
+            this.tsbShowOwned.Size = new System.Drawing.Size(28, 28);
             this.tsbShowOwned.Text = "Show Owned Skillbooks...";
             this.tsbShowOwned.Click += new System.EventHandler(this.tsShowOwnedSkillbooks_Click);
             // 
             // toolsToolStripSeparator
             // 
             this.toolsToolStripSeparator.Name = "toolsToolStripSeparator";
-			this.toolsToolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.toolsToolStripSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // tsbOptions
             // 
@@ -1023,7 +1023,7 @@ namespace EVEMon
             this.tsbOptions.Image = ((System.Drawing.Image)(resources.GetObject("tsbOptions.Image")));
             this.tsbOptions.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbOptions.Name = "tsbOptions";
-			this.tsbOptions.Size = new System.Drawing.Size(23, 22);
+            this.tsbOptions.Size = new System.Drawing.Size(28, 28);
             this.tsbOptions.Text = "Options...";
             this.tsbOptions.Click += new System.EventHandler(this.optionsMenuItem_Click);
             // 
@@ -1033,7 +1033,7 @@ namespace EVEMon
             this.tsbAbout.Image = ((System.Drawing.Image)(resources.GetObject("tsbAbout.Image")));
             this.tsbAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAbout.Name = "tsbAbout";
-			this.tsbAbout.Size = new System.Drawing.Size(23, 22);
+            this.tsbAbout.Size = new System.Drawing.Size(28, 28);
             this.tsbAbout.Text = "About...";
             this.tsbAbout.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1055,13 +1055,13 @@ namespace EVEMon
             this.tcCharacterTabs.AllowDrop = true;
             this.tcCharacterTabs.Controls.Add(this.tpOverview);
             this.tcCharacterTabs.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tcCharacterTabs.Location = new System.Drawing.Point(0, 49);
+            this.tcCharacterTabs.Location = new System.Drawing.Point(0, 55);
             this.tcCharacterTabs.Multiline = true;
             this.tcCharacterTabs.Name = "tcCharacterTabs";
             this.tcCharacterTabs.Padding = new System.Drawing.Point(0, 0);
             this.tcCharacterTabs.SelectedIndex = 0;
             this.tcCharacterTabs.ShowToolTips = true;
-			this.tcCharacterTabs.Size = new System.Drawing.Size(600, 503);
+            this.tcCharacterTabs.Size = new System.Drawing.Size(600, 497);
             this.tcCharacterTabs.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tcCharacterTabs.TabIndex = 0;
             this.tcCharacterTabs.SelectedIndexChanged += new System.EventHandler(this.tcCharacterTabs_SelectedIndexChanged);
@@ -1072,7 +1072,7 @@ namespace EVEMon
             this.tpOverview.Controls.Add(this.overview);
             this.tpOverview.Location = new System.Drawing.Point(4, 22);
             this.tpOverview.Name = "tpOverview";
-			this.tpOverview.Size = new System.Drawing.Size(592, 477);
+            this.tpOverview.Size = new System.Drawing.Size(592, 471);
             this.tpOverview.TabIndex = 0;
             this.tpOverview.Text = "Overview";
             this.tpOverview.UseVisualStyleBackColor = true;
@@ -1086,7 +1086,7 @@ namespace EVEMon
             this.overview.Location = new System.Drawing.Point(0, 0);
             this.overview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.overview.Name = "overview";
-			this.overview.Size = new System.Drawing.Size(592, 477);
+            this.overview.Size = new System.Drawing.Size(592, 471);
             this.overview.TabIndex = 0;
             this.overview.CharacterClicked += new System.EventHandler<EVEMon.Common.CustomEventArgs.CharacterChangedEventArgs>(this.overview_CharacterClicked);
             // 
@@ -1105,9 +1105,9 @@ namespace EVEMon
             this.tabLoadingLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabLoadingLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabLoadingLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.tabLoadingLabel.Location = new System.Drawing.Point(0, 49);
+            this.tabLoadingLabel.Location = new System.Drawing.Point(0, 55);
             this.tabLoadingLabel.Name = "tabLoadingLabel";
-			this.tabLoadingLabel.Size = new System.Drawing.Size(600, 503);
+            this.tabLoadingLabel.Size = new System.Drawing.Size(600, 497);
             this.tabLoadingLabel.TabIndex = 7;
             this.tabLoadingLabel.Text = "Loading...\r\n\r\nPlease Wait.";
             this.tabLoadingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1117,9 +1117,9 @@ namespace EVEMon
             this.noCharactersLabel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.noCharactersLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.noCharactersLabel.ForeColor = System.Drawing.SystemColors.GrayText;
-			this.noCharactersLabel.Location = new System.Drawing.Point(0, 49);
+            this.noCharactersLabel.Location = new System.Drawing.Point(0, 55);
             this.noCharactersLabel.Name = "noCharactersLabel";
-			this.noCharactersLabel.Size = new System.Drawing.Size(600, 503);
+            this.noCharactersLabel.Size = new System.Drawing.Size(600, 497);
             this.noCharactersLabel.TabIndex = 8;
             this.noCharactersLabel.Text = "No character loaded or monitored\r\n\r\nTo add characters, click the File > Add API k" +
     "ey... menu option\r\nTo monitor characters, click the File > Manage API Keys... me" +

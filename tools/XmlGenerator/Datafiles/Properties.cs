@@ -93,6 +93,16 @@ namespace EVEMon.XmlGenerator.Datafiles
                 Description = "Used to describe the consumption rate."
             };
             s_injectedUnits.Add(perHourUnit);
+            
+            // TODO: New unit added in 20.02, remove when SDE conversion is updated
+            EveUnits modifierRealPercentUnit = new EveUnits
+            {
+                ID = 205,
+                Name = "modifier realPercent",
+                DisplayName = "%",
+                Description = "Used for multipliers displayed as % 10 is +10% -10 is -10% 3.6 is +3.6%"
+            };
+            s_injectedUnits.Add(modifierRealPercentUnit);
 
             // Create EVEMon custom properties
             int newPropID = Database.DgmAttributeTypesTable.Last().ID;
@@ -307,8 +317,12 @@ namespace EVEMon.XmlGenerator.Datafiles
 
                     // Unit
                     prop.UnitID = srcProp.UnitID.GetValueOrDefault();
-                    prop.Unit = srcProp.UnitID.HasValue
-                        ? Database.EveUnitsTable.Concat(s_injectedUnits).First(
+
+                    Database.EveUnitsTable.Concat(s_injectedUnits);
+                     
+                    prop.Unit = srcProp.UnitID.HasValue && Database.EveUnitsTable.Any(
+                            x => x.ID == srcProp.UnitID.Value)
+                        ? Database.EveUnitsTable.FirstOrDefault(
                             x => x.ID == srcProp.UnitID.Value).DisplayName
                         : string.Empty;
 

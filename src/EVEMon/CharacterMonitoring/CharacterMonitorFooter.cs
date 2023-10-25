@@ -101,7 +101,8 @@ namespace EVEMon.CharacterMonitoring
         /// </summary>
         private void UpdateFrequentControls()
         {
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 // Update the training controls
@@ -109,7 +110,8 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
             }
         }
 
@@ -241,7 +243,8 @@ namespace EVEMon.CharacterMonitoring
             if (!Visible)
                 return;
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 // "Update Calendar" button
@@ -249,7 +252,8 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using EVEMon.Common.Collections;
 using EVEMon.Common.Serialization.Datafiles;
 using EVEMon.XmlGenerator.Interfaces;
@@ -170,9 +171,15 @@ namespace EVEMon.XmlGenerator.Datafiles
                     ID = agent.ID,
                     Level = agent.Level,
                     Quality = agent.Quality,
-                    Name = Database.InvNamesTable[agent.ID].Name,
-                    DivisionName = Database.CrpNPCDivisionsTable[agent.DivisionID].DivisionName,
-                    AgentType = Database.AgtAgentTypesTable[agent.AgentTypeID].AgentType,
+                    Name = Database.InvNamesTable.HasValue(agent.ID)
+                        ? Database.InvNamesTable[agent.ID].Name
+                        : "Missing",
+                    DivisionName = Database.CrpNPCDivisionsTable.HasValue(agent.DivisionID)
+                        ? Database.CrpNPCDivisionsTable[agent.DivisionID].DivisionName
+                        : "Missing",
+                    AgentType = Database.AgtAgentTypesTable.HasValue(agent.AgentTypeID)
+                        ? Database.AgtAgentTypesTable[agent.AgentTypeID].AgentType
+                        : "Missing",
                     ResearchSkillID = Database.AgtResearchAgentsTable.Any(x => x.ID == agent.ID)
                         ? Database.AgtResearchAgentsTable[agent.ID].ResearchSkillID
                         : 0,

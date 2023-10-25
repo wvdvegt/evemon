@@ -115,7 +115,7 @@ namespace EVEMon.Common.Service
         private static Task UpdateOnOneSecondTickAsync()
         {
             // Is a save requested and is the last save older than 10s ?
-            if (s_savePending && DateTime.UtcNow > s_lastSaveTime.AddSeconds(10))
+            if (s_savePending && DateTime.UtcNow > s_lastSaveTime.AddSeconds(30))
                 return SaveImmediateAsync();
 
             return Task.CompletedTask;

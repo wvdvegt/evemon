@@ -58,7 +58,7 @@ namespace EVEMon.Common
         /// Occurs when the collection of a character implant set changed.
         /// </summary>
         public static event EventHandler<CharacterChangedEventArgs> CharacterImplantSetCollectionChanged;
-        
+
         /// <summary>
         /// Occurs when an account status has been updated.
         /// </summary>
@@ -128,7 +128,7 @@ namespace EVEMon.Common
         /// Occurs when a character info has been updated.
         /// </summary>
         public static event EventHandler<CharacterChangedEventArgs> CharacterInfoUpdated;
-        
+
         /// <summary>
         /// Occurs when a character skill queue has been updated.
         /// </summary>
@@ -263,7 +263,7 @@ namespace EVEMon.Common
         /// Occurs when the notifications of a character have been updated.
         /// </summary>
         public static event EventHandler<CharacterChangedEventArgs> CharacterEVENotificationsUpdated;
-        
+
         /// <summary>
         /// Occurs when the text of a character contacts have been updated.
         /// </summary>
@@ -566,7 +566,7 @@ namespace EVEMon.Common
             Settings.Save();
             CharacterListUpdated?.ThreadSafeInvoke(null, new ESIKeyInfoChangedEventArgs(esiKey));
         }
-        
+
         /// <summary>
         /// Called when the character implant set collection changed.
         /// </summary>
@@ -932,7 +932,7 @@ namespace EVEMon.Common
             Settings.Save();
             CharacterEVENotificationsUpdated?.ThreadSafeInvoke(null, new CharacterChangedEventArgs(character));
         }
-        
+
         /// <summary>
         /// Called when the character contacts updated.
         /// </summary>

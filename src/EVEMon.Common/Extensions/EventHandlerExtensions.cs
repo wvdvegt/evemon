@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 
 namespace EVEMon.Common.Extensions
 {
@@ -22,9 +25,18 @@ namespace EVEMon.Common.Extensions
             if (eventHandler == null)
                 return;
 
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            Stopwatch time = new Stopwatch();
+            List<KeyValuePair<long, string>> timing = new List<KeyValuePair<long, string>>();
+
             // Get each subscriber in turn
             foreach (EventHandler handler in eventHandler.GetInvocationList().Cast<EventHandler>())
             {
+                time.Reset();
+                time.Start();
+
                 // Get the object containing the subscribing method
                 // If the target doesn't implement ISyncronizeInvoke, this will be null
                 ISynchronizeInvoke sync = handler.Target as ISynchronizeInvoke;
@@ -36,13 +48,31 @@ namespace EVEMon.Common.Extensions
                     // This is preferable to using Invoke so that if an exception is thrown its presented
                     // in the context of the handler, not the current thread
                     IAsyncResult result = sync.BeginInvoke(handler, new[] { sender, e });
+                    //veg
+                    //Thread.Sleep(1);
                     sync.EndInvoke(result);
                     continue;
                 }
 
                 // No it doesn't, so invoke the handler directly
                 handler.Invoke(sender, e);
+
+                timing.Add(new KeyValuePair<long, string>(time.ElapsedTicks, $"{handler.Method.DeclaringType.FullName}.{handler.Method.Name}"));
+
+                //System.Windows.Forms.Application.DoEvents();
+
+                //veg
+                //Thread.Sleep(1);
             }
+
+            sw.Stop();
+
+            foreach (KeyValuePair<long, string> kvp in timing.OrderBy(p => p.Key).Reverse().Take(5))
+            {
+                EveMonClient.Trace($"{kvp.Key} - {kvp.Value}");
+            }
+
+            EveMonClient.Trace($"ThreadSafeInvoke: { sw.ElapsedMilliseconds} ms for {eventHandler.GetInvocationList().Length} delegates");
         }
 
         /// <summary>

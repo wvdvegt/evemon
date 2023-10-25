@@ -216,3 +216,4 @@ ModelManifest.xml
 /tools/XmlGenerator/*.sqlite
 /Remote.txt
 /tools/XmlGenerator/sqlite-latest.sqlite.bz2
+*.diff

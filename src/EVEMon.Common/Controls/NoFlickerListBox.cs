@@ -16,10 +16,6 @@ namespace EVEMon.Common.Controls
         public NoFlickerListBox() : base()
         {
             pointerDown = DateTime.MinValue;
-
-#warning VEG EXPERIMENT set doublebuffered to true.
-
-            DoubleBuffered = true;
         }
 
         /// <summary>

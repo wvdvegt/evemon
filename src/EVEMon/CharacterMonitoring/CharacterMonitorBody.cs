@@ -161,7 +161,8 @@ namespace EVEMon.CharacterMonitoring
         /// </summary>
         private void UpdateFrequentControls()
         {
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 // Hides or shows the warning about a character with no API key
@@ -169,7 +170,8 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
                 Refresh();
             }
         }
@@ -183,7 +185,8 @@ namespace EVEMon.CharacterMonitoring
             if (!Visible)
                 return;
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 // Reset the text filter
@@ -227,8 +230,9 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
-                Refresh();
+                //veg
+                //ResumeLayout(false);
+                //Refresh();
             }
         }
 

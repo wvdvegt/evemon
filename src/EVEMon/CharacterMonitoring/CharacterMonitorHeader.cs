@@ -127,7 +127,8 @@ namespace EVEMon.CharacterMonitoring
             if (m_character == null)
                 return;
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 RefreshThrobber();
@@ -148,7 +149,8 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
             }
         }
 
@@ -191,7 +193,8 @@ namespace EVEMon.CharacterMonitoring
             if (m_character == null)
                 return;
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 // Safe for work implementation
@@ -219,7 +222,8 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
             }
         }
 
@@ -231,7 +235,8 @@ namespace EVEMon.CharacterMonitoring
             if (m_character == null)
                 return;
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             try
             {
                 SecurityStatusLabel.Text = $"Security Status: {m_character.SecurityStatus:N2}";
@@ -246,7 +251,7 @@ namespace EVEMon.CharacterMonitoring
             }
             finally
             {
-                ResumeLayout(false);
+                //ResumeLayout(false);
             }
         }
 
@@ -290,7 +295,8 @@ namespace EVEMon.CharacterMonitoring
                 return;
             }
 
-            SuspendLayout();
+            //veg
+            //SuspendLayout();
             m_updatingStatus = true;
             try
             {
@@ -332,7 +338,8 @@ namespace EVEMon.CharacterMonitoring
             finally
             {
                 m_updatingStatus = false;
-                ResumeLayout(false);
+                //veg
+                //ResumeLayout(false);
             }
         }
 

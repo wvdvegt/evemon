@@ -70,12 +70,32 @@ namespace EVEMon.Common.Threading
             timer.Start();
         }
 
+        private static object locker = new object();
+
         /// <summary>
         /// Occurs on every second, when the timer ticks.
         /// </summary>
         private static void OneSecondTickTimer_Tick(object sender, EventArgs e)
         {
-            EveMonClient.UpdateOnOneSecondTick();
+            s_oneSecondTimer.Stop();
+
+            if (Monitor.TryEnter(locker))
+            {
+                try
+                {
+                    EveMonClient.UpdateOnOneSecondTick();
+                }
+                finally
+                {
+                    Monitor.Exit(locker);
+                }
+            }
+            else
+            {
+                EveMonClient.Trace($"Skipped OneSecondTickTimer_Tick()");
+            }
+
+            s_oneSecondTimer.Start();
         }
     }
 }

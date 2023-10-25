@@ -992,7 +992,7 @@ namespace EVEMon
         {
             UpdateStatusLabel();
             UpdateWindowTitle();
-
+            
             // Checks whether the tooltip must be displayed
             if (m_popupNotifications.Count != 0 && DateTime.UtcNow > m_nextPopupUpdate)
                 DisplayTooltipNotifications();
@@ -1123,7 +1123,10 @@ namespace EVEMon
                 builder.Append(appSuffix);
 
             // Set the window title
-            Text = builder.ToString();
+            if (Text != builder.ToString())
+            {
+                Text = builder.ToString();
+            }
         }
 
         /// <summary>

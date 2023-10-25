@@ -29,7 +29,7 @@ namespace EVEMon.Common.Controls
         /// <param name="parent">The parent.</param>
         public static void SuspendDrawing(this Control parent)
         {
-            NativeMethods.SendMessage(parent.Handle, NativeMethods.WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero);
+            //NativeMethods.SendMessage(parent.Handle, NativeMethods.WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero);
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace EVEMon.Common.Controls
         /// <param name="parent">The parent.</param>
         public static void ResumeDrawing(this Control parent)
         {
-            NativeMethods.SendMessage(parent.Handle, NativeMethods.WM_SETREDRAW, (IntPtr)1, IntPtr.Zero);
-            parent.Refresh();
+            //NativeMethods.SendMessage(parent.Handle, NativeMethods.WM_SETREDRAW, (IntPtr)1, IntPtr.Zero);
+            //parent.Refresh();
         }
     }
 }

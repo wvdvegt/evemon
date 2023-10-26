@@ -7,7 +7,11 @@ A lightweight, easy-to-use standalone Windows application designed to assist you
 
 For complete info on *How To Contribute* please visit the [wiki](https://bitbucket.org/EVEMonDevTeam/evemon/wiki) section
 
-**Maintainer of the ESI fork:**
+**Maintainer of the fork:**
+
+[EVE:Wim van der Vegt](https://github.com/wvdvegt/evemon) (GitHub)
+
+**Forked from:**
 
 [EVE:Peter Han](https://github.com/peterhaneve/evemon) (GitHub)
 

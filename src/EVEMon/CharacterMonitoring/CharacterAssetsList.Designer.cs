@@ -154,7 +154,7 @@
             this.lblTotalCost.Name = "lblTotalCost";
             this.lblTotalCost.Size = new System.Drawing.Size(207, 13);
             this.lblTotalCost.TabIndex = 0;
-            this.lblTotalCost.Text = "Estimated Cost of shown items: {0:N2} ISK";
+            this.lblTotalCost.Text = "Estimated Cost of shown items: {0:N0} ISK";
             this.lblTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // totalCostThrobber

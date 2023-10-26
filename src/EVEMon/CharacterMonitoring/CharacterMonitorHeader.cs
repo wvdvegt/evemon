@@ -366,7 +366,7 @@ namespace EVEMon.CharacterMonitoring
             if (m_character == null)
                 return;
 
-            BalanceLabel.Text = $"Balance: {m_character.Balance:N} ISK";
+            BalanceLabel.Text = $"Balance: {m_character.Balance:N0} ISK";
 
             CCPCharacter ccpCharacter = m_character as CCPCharacter;
 

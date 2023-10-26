@@ -461,7 +461,7 @@ namespace EVEMon.Controls
         /// </summary>
         private void FormatBalance()
         {
-            lblBalance.Text = $"{Character.Balance:N} ISK";
+            lblBalance.Text = $"{Character.Balance:N0} ISK";
 
             CCPCharacter ccpCharacter = Character as CCPCharacter;
             Color balanceColor = m_settingsForeColor;

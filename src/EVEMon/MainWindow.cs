@@ -115,7 +115,7 @@ namespace EVEMon
 
             m_startMinimized = Environment.GetCommandLineArgs().Contains("-startMinimized");
 
-#warning set to false to re-enable data updates from GitHub once more.
+            //! veg - set to false to re-enable data updates from GitHub once more.
             m_isShowingDataUpdateWindow = true;
         }
 

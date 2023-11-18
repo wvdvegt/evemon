@@ -251,9 +251,10 @@ namespace EVEMon
             // Load characters related settings
             await Settings.ImportDataAsync();
 
+            //! veg Disable Lochitech G15
             // Initialize G15
             //if (OSFeatureCheck.IsWindowsNT)
-            //G15Handler.Initialize();
+            //  G15Handler.Initialize();
 
             m_initialized = true;
 

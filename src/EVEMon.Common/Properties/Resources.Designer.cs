@@ -19,7 +19,7 @@ namespace EVEMon.Common.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -100,7 +100,7 @@ namespace EVEMon.Common.Properties {
         ///        p, body { color: #FFFFFF; font-family: ProximaNova-Regular, Arial }
         ///		h2 { text-align: center; margin-bottom: 10px; text-shadow: 1px 1px 2px #7F7F7F; font-size: 30px; font-family: &quot;ProximaNova-SemiBold&quot;,Arial }
         ///        body { background: #000000 url(https://login.eveonline.com/Images/site-bg.jpg) no-repeat center center fixed }
-        ///        #content { bac [rest of string was truncated]&quot;;.
+        ///        #content { background-c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CallbackFail {
             get {
@@ -118,7 +118,7 @@ namespace EVEMon.Common.Properties {
         ///        p, body { color: #FFFFFF; font-family: ProximaNova-Regular, Arial }
         ///		h2 { text-align: center; margin-bottom: 10px; text-shadow: 1px 1px 2px #7F7F7F; font-size: 30px; font-family: &quot;ProximaNova-SemiBold&quot;,Arial }
         ///        body { background: #000000 url(https://login.eveonline.com/Images/site-bg.jpg) no-repeat center center fixed }
-        ///   [rest of string was truncated]&quot;;.
+        ///        #co [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CallbackOK {
             get {
@@ -128,7 +128,7 @@ namespace EVEMon.Common.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to factionID,factionName,description,raceIDs,solarSystemID,corporationID,sizeFactor,stationCount,stationSystemCount,militiaCorporationID,iconID
-        ///500001,Caldari State,&quot;The Caldari State is ruled by several mega-corporations. There is no central government to speak of - all territories within the State are owned and ruled by corporations. Duty and discipline are required traits in Caldari citizens, plus unquestioning loyalty to the corporation they live to serve. The corporations compete aggressively amongst the [rest of string was truncated]&quot;;.
+        ///500001,Caldari State,&quot;The Caldari State is ruled by several mega-corporations. There is no central government to speak of - all territories within the State are owned and ruled by corporations. Duty and discipline are required traits in Caldari citizens, plus unquestioning loyalty to the corporation they live to serve. The corporations compete aggressively amongst them [rest of string was truncated]&quot;;.
         /// </summary>
         public static string chrFactions {
             get {
@@ -200,7 +200,7 @@ namespace EVEMon.Common.Properties {
         ///    &lt;/xsl:copy&gt;
         ///  &lt;/xsl:template&gt;
         ///
-        ///  &lt;!-- Renaming root name &apos;blueprints&apos; in blueprints datafile to &apos;bluep [rest of string was truncated]&quot;;.
+        ///  &lt;!-- Renaming root name &apos;blueprints&apos; in blueprints datafile to &apos;blueprintsDatafile [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DatafilesXSLT {
             get {
@@ -707,13 +707,14 @@ namespace EVEMon.Common.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
-        ///&lt;invFlags xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+        ///&lt;invFlags xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
         ///  &lt;rowset name=&quot;flags&quot; key=&quot;flagID&quot; columns=&quot;flagID,flagName,flagText&quot;&gt;
         ///    &lt;row flagID=&quot;0&quot; flagName=&quot;None&quot; flagText=&quot;None&quot; /&gt;
         ///    &lt;row flagID=&quot;1&quot; flagName=&quot;Wallet&quot; flagText=&quot;Wallet&quot; /&gt;
         ///    &lt;row flagID=&quot;2&quot; flagName=&quot;Offices&quot; flagText=&quot;OfficeFolder&quot; /&gt;
         ///    &lt;row flagID=&quot;3&quot; flagName=&quot;Wardrobe&quot; flagText=&quot;Wardrobe&quot; /&gt;
-        ///    &lt;row flagID=&quot;4&quot; flagName=&quot;Hangar&quot; flagText=&quot;Hangar&quot; /&gt; [rest of string was truncated]&quot;;.
+        ///    &lt;row flagID=&quot;4&quot; flagName=&quot;Hangar&quot; flagText=&quot;Hangar&quot; /&gt;
+        ///    &lt;r [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Flags {
             get {
@@ -844,7 +845,7 @@ namespace EVEMon.Common.Properties {
         ///  &lt;result&gt;
         ///    &lt;rowset name=&quot;refTypes&quot; key=&quot;refTypeID&quot; columns=&quot;refTypeID,refTypeCode,refTypeName,subjectLayout,textLayout&quot;&gt;
         ///      &lt;row refTypeID=&quot;1&quot; refTypeCode=&quot;OldLscMessages&quot; refTypeName=&quot;Old Notifications&quot; subjectLayout=&quot;{subject}&quot; textLayout=&quot;{body}&quot;/&gt;
-        ///      &lt;row refTypeID=&quot;2&quot; refTypeCode=&quot;CharTerminationMsg&quot; refTypeName=&quot;Member Biomassed&quot; subjectLayout=&quot;RIP Corporation member {charID}&quot; textLayout=&quot;The untimely death of fel [rest of string was truncated]&quot;;.
+        ///      &lt;row refTypeID=&quot;2&quot; refTypeCode=&quot;CharTerminationMsg&quot; refTypeName=&quot;Member Biomassed&quot; subjectLayout=&quot;RIP Corporation member {charID}&quot; textLayout=&quot;The untimely death of fellow {c [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NotificationRefTypes {
             get {
@@ -873,7 +874,7 @@ namespace EVEMon.Common.Properties {
         ///      &lt;row refTypeID=&quot;2&quot; refTypeName=&quot;Market Transaction&quot; /&gt;
         ///      &lt;row refTypeID=&quot;3&quot; refTypeName=&quot;GM Cash Transfer&quot; /&gt;
         ///      &lt;row refTypeID=&quot;4&quot; refTypeName=&quot;ATM Withdraw&quot; /&gt;
-        ///      &lt;row refTypeID= [rest of string was truncated]&quot;;.
+        ///      &lt;row refTypeID=&quot;5&quot; refTyp [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RefTypes {
             get {
@@ -896,7 +897,7 @@ namespace EVEMon.Common.Properties {
         ///  &lt;/xsl:template&gt;
         ///
         ///  &lt;!-- Rowsets are transformed into something else--&gt;
-        ///  &lt;xsl:templat [rest of string was truncated]&quot;;.
+        ///  &lt;xsl:template match=&quot;rowse [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RowsetsXSLT {
             get {
@@ -918,7 +919,7 @@ namespace EVEMon.Common.Properties {
         ///  &lt;/xsl:template&gt;
         ///
         ///  &lt;!--Transforms the SerializableDictionary to its Modified version--&gt;
-        ///  &lt;xsl:templa [rest of string was truncated]&quot;;.
+        ///  &lt;xsl:template match=&quot;per [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SettingsXSLT {
             get {
@@ -1022,7 +1023,7 @@ namespace EVEMon.Common.Properties {
         ///          &lt;tr&gt;
         ///            &lt;td&gt;
         ///              &lt;xsl:element name=&quot;img&quot;&gt;
-        ///                &lt;xsl:attribute name=&quot;src&quot;&gt;http://image.eveonline.com/character/&lt;xsl:value-of  [rest of string was truncated]&quot;;.
+        ///                &lt;xsl:attribute name=&quot;src&quot;&gt;http://image.eveonline.com/character/&lt;xsl:value-of select=&quot;@charact [rest of string was truncated]&quot;;.
         /// </summary>
         public static string XmlToHtmlXslt {
             get {

@@ -12,7 +12,7 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
     internal sealed partial class DropboxCloudStorageServiceSettings : global::System.Configuration.ApplicationSettingsBase {
         
         private static DropboxCloudStorageServiceSettings defaultInstance = ((DropboxCloudStorageServiceSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DropboxCloudStorageServiceSettings())));

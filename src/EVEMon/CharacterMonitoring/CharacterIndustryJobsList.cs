@@ -304,7 +304,7 @@ namespace EVEMon.CharacterMonitoring
             m_columns.ForEach(column =>
             {
                 if (column.Visible)
-                    column.Width = -2;
+                    column.Width = column.Column.GetHeader() == "TTC" ? 120 : -2;
             });
 
             UpdateColumns();

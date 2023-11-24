@@ -76,6 +76,7 @@ namespace EVEMon.CharacterMonitoring
 			// chTTC
 			// 
 			this.chTTC.Text = "TTC";
+            this.chTTC.Width = 120;
 			// 
 			// chInstalledItem
 			// 

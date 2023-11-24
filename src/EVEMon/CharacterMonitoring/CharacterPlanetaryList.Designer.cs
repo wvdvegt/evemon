@@ -153,7 +153,7 @@
 			// chTTC
 			// 
 			this.chTTC.Text = "TTC";
-			this.chTTC.Width = 54;
+			this.chTTC.Width = 120;
 			// 
 			// chInstallation
 			// 

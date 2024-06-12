@@ -67,12 +67,12 @@ namespace EVEMon.Common.Extensions
 
             sw.Stop();
 
-            foreach (KeyValuePair<long, string> kvp in timing.OrderBy(p => p.Key).Reverse().Take(5))
-            {
-                EveMonClient.Trace($"{kvp.Key} - {kvp.Value}");
-            }
+            //foreach (KeyValuePair<long, string> kvp in timing.OrderBy(p => p.Key).Reverse().Take(5))
+            //{
+            //    EveMonClient.Trace($"{kvp.Key} - {kvp.Value}");
+            //}
 
-            EveMonClient.Trace($"ThreadSafeInvoke: { sw.ElapsedMilliseconds} ms for {eventHandler.GetInvocationList().Length} delegates");
+            //EveMonClient.Trace($"ThreadSafeInvoke: { sw.ElapsedMilliseconds} ms for {eventHandler.GetInvocationList().Length} delegates");
         }
 
         /// <summary>

@@ -65,7 +65,7 @@ namespace EVEMon.Common.SettingsObjects
                             {
                                 Column = column,
                                 Visible = defaultColumns.Contains(column),
-                                Width = -2
+                                Width = column.GetHeader() == "TTC" ? 120 : -2
                             });
 
             }

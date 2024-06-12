@@ -45,6 +45,7 @@ namespace EVEMon.CharacterMonitoring
         private bool m_isUpdatingColumns;
         private bool m_columnsChanged;
         private bool m_init;
+        private bool m_ttcsort = false;
 
         private int m_columnTTCIndex;
 
@@ -205,7 +206,7 @@ namespace EVEMon.CharacterMonitoring
                     m_columns.AddRange(value.Cast<IndustryJobColumnSettings>());
 
                 // Whenever the columns changes, we need to
-                // reset the dipslay index of the TTC column
+                // reset the display index of the TTC column
                 m_columnTTCIndex = -1;
 
                 if (m_init)
@@ -303,7 +304,7 @@ namespace EVEMon.CharacterMonitoring
             m_columns.ForEach(column =>
             {
                 if (column.Visible)
-                    column.Width = -2;
+                    column.Width = column.Column.GetHeader() == "TTC" ? 120 : -2;
             });
 
             UpdateColumns();
@@ -335,6 +336,15 @@ namespace EVEMon.CharacterMonitoring
                     switch (column.Column)
                     {
                         case IndustryJobColumn.TTC:
+                            //! veg 28-20-2023 Sort on TTC by default.
+                            if (!m_ttcsort)
+                            {
+                                m_sortCriteria = column.Column;
+                                UpdateSort();
+                                m_ttcsort = true;
+                            }
+                            header.TextAlign = HorizontalAlignment.Right;
+                            break;
                         case IndustryJobColumn.Cost:
                         case IndustryJobColumn.Probability:
                             header.TextAlign = HorizontalAlignment.Right;

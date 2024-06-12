@@ -23,7 +23,7 @@ using EVEMon.Common.Service;
 using EVEMon.Common.SettingsObjects;
 using EVEMon.DetailsWindow;
 using EVEMon.ImplantControls;
-using EVEMon.LogitechG15;
+//using EVEMon.LogitechG15;
 using EVEMon.NotificationWindow;
 using EVEMon.PieChart;
 using EVEMon.SettingsUI;
@@ -115,7 +115,7 @@ namespace EVEMon
 
             m_startMinimized = Environment.GetCommandLineArgs().Contains("-startMinimized");
 
-#warning set to false to re-enable data updates from GitHub once more.
+            //! veg - set to false to re-enable data updates from GitHub once more.
             m_isShowingDataUpdateWindow = true;
         }
 
@@ -242,7 +242,8 @@ namespace EVEMon
             await GlobalDatafileCollection.LoadAsync();
 
             // Load cache data
-            await TaskHelper.RunIOBoundTaskAsync(() => {
+            await TaskHelper.RunIOBoundTaskAsync(() =>
+            {
                 EveIDToName.InitializeFromFile();
                 EveIDToStation.InitializeFromFile();
             });
@@ -250,9 +251,10 @@ namespace EVEMon
             // Load characters related settings
             await Settings.ImportDataAsync();
 
+            //! veg Disable Lochitech G15
             // Initialize G15
-            if (OSFeatureCheck.IsWindowsNT)
-                G15Handler.Initialize();
+            //if (OSFeatureCheck.IsWindowsNT)
+            //  G15Handler.Initialize();
 
             m_initialized = true;
 
@@ -376,7 +378,7 @@ namespace EVEMon
         /// <param name="e"></param>
         protected override void OnDeactivate(EventArgs e)
         {
-            base. OnDeactivate(e);
+            base.OnDeactivate(e);
 
             // Only cleanup if we're deactivating to the minimized state (e.g. systray)
             if (WindowState == FormWindowState.Minimized)
@@ -992,7 +994,7 @@ namespace EVEMon
         {
             UpdateStatusLabel();
             UpdateWindowTitle();
-            
+
             // Checks whether the tooltip must be displayed
             if (m_popupNotifications.Count != 0 && DateTime.UtcNow > m_nextPopupUpdate)
                 DisplayTooltipNotifications();
@@ -1221,7 +1223,7 @@ namespace EVEMon
                 string message = $"A new version ({e.NewestVersion}) is available at " +
                     $"{NetworkConstants.EVEMonMainPage}.{Environment.NewLine}" +
                     $"{Environment.NewLine}Your current version is: {e.CurrentVersion}.";
-                    
+
                 MessageBoxCustom.Show(this, message, @"EVEMon Update Available", "Ignore this upgrade",
                     icon: MessageBoxIcon.Information);
 
@@ -1711,7 +1713,7 @@ namespace EVEMon
             // Show or bring to front if a window with the same plan as tag already exists
             PlanWindow.ShowPlanWindow(GetCurrentCharacter(), plan);
         }
-        
+
         /// <summary>
         /// Tools > Characters Comparison.
         /// Open the Characters Comparison window.
@@ -2284,7 +2286,7 @@ namespace EVEMon
 
             // Displays or not the 'no characters added' label
             noCharactersLabel.Visible = !EveMonClient.MonitoredCharacters.Any();
-            
+
             // Tray icon's visibility
             trayIcon.Visible = Settings.UI.SystemTrayIcon == SystemTrayBehaviour.AlwaysVisible
                                || (Settings.UI.SystemTrayIcon == SystemTrayBehaviour.ShowWhenMinimized &&
@@ -2350,7 +2352,7 @@ namespace EVEMon
             {
                 item.Enabled = enabled;
             }
-            
+
             UpdateControlsOnTabSelectionChange();
         }
 

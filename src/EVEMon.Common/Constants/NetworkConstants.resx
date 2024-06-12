@@ -183,7 +183,7 @@
   </data>
   <data name="ESICharacterSheet" xml:space="preserve">
     <value>/v5/characters/{0:D}/</value>
-    <comment>3600</comment>
+    <comment>120</comment>
   </data>
   <data name="ESIStandings" xml:space="preserve">
     <value>/v1/characters/{0:D}/standings/</value>

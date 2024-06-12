@@ -53,7 +53,8 @@ namespace EVEMon.SettingsUI
             removeConfirmedRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
             settingsFileStorageControl.Font = FontFactory.GetFont("Tahoma", 8.25F);
             extraInfoComboBox.SelectedIndex = 0;
-
+            //! veg remove Lochitech G15 UI (hardcoded indexes).
+            treeView.Nodes[0].Nodes.RemoveAt(2);
             m_settings = Settings.Export();
             m_oldSettings = Settings.Export();
             m_preSelect = null;
@@ -159,8 +160,9 @@ namespace EVEMon.SettingsUI
             // Tray icon settings
             SetTrayIconSettings();
 
+            //! veg Disable Lochitech G15
             // G15
-            SetG15Settings();
+            //SetG15Settings();
 
             // Skills display on the main window
             var mws = m_settings.UI.MainWindow;

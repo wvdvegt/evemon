@@ -217,3 +217,5 @@ ModelManifest.xml
 /Remote.txt
 /tools/XmlGenerator/sqlite-latest.sqlite.bz2
 *.diff
+tools/XmlGenerator/Index of -dump.url
+src/EVEMon.Common/Resources/Index of -dump.url

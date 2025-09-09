@@ -139,5 +139,8 @@
     <row flagID="182" flagName="SpecializedAsteroidHold" flagText="Specialized Asteroid Hold" />
     <row flagID="183" flagName="MobileDepot" flagText="Mobile Depot" />
     <row flagID="184" flagName="CorpProjectsHangar" flagText="Corporation Projects Hangar" />
+    <row flagID="185" flagName="ColonyResourcesHold" flagText="Infrastructure Hold" />
+    <row flagID="186" flagName="MoonMaterialBay" flagText="Moon Material Bay" />
+    <row flagID="187" flagName="CapsuleerDeliveries" flagText="Capsuleer Deliveries" />
   </rowset>
 </invFlags>

@@ -78,7 +78,7 @@ namespace EVEMon.XmlGenerator
             Properties.GenerateDatafile();
             Skills.GenerateDatafile();
 
-            //Masteries.GenerateDatafile();
+            //! Masteries.GenerateDatafile();
 
             Geography.GenerateDatafile();
             Blueprints.GenerateDatafile();

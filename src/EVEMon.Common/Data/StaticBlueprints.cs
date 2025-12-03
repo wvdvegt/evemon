@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using EVEMon.Common.Collections.Global;
 using EVEMon.Common.Serialization.Datafiles;
 
@@ -23,6 +26,26 @@ namespace EVEMon.Common.Data
             if (BlueprintMarketGroups != null)
                 return;
 
+            List<string> groupData = File
+                .ReadAllLines(@"C:\Users\Wim van der Vegt\AppData\Roaming\EveMon\groups.jsonl")
+                .ToList();
+            List<MarketGroup> groups = new List<MarketGroup>();
+            foreach (string line in groupData)
+            {
+                JsonObject group = JsonSerializer.Deserialize<JsonObject>(line);
+               // groups.Add(group);
+            }
+
+            List<string> bpoData = File
+                .ReadAllLines(@"C:\Users\Wim van der Vegt\AppData\Roaming\EveMon\blueprints.jsonl")
+                .ToList();
+
+            List<Blueprint> bpos = new List<Blueprint>();
+            foreach (string line in bpoData)
+            {
+                Blueprint bpo = JsonSerializer.Deserialize<Blueprint>(line);
+                bpos.Add(bpo);
+            }
             BlueprintsDatafile datafile = Util.DeserializeDatafile<BlueprintsDatafile>(DatafileConstants.BlueprintsDatafile,
                 Util.LoadXslt(Properties.Resources.DatafilesXSLT));
 

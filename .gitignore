@@ -219,3 +219,5 @@ ModelManifest.xml
 *.diff
 tools/XmlGenerator/Index of -dump.url
 src/EVEMon.Common/Resources/Index of -dump.url
+tools/XmlGenerator/eve-online-static-data-3118350-jsonl.zip
+tools/XmlGenerator/eve-online-static-data-3118350-yaml.zip

@@ -218,6 +218,7 @@
     <Compile Include="StaticData\InvControlTowerResourcePurposes.cs" />
     <Compile Include="StaticData\InvFlags.cs" />
     <Compile Include="StaticData\InvTypeReactions.cs" />
+    <Compile Include="Todo.cs" />
     <Compile Include="Xmlfiles\Flags.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Interfaces\IHasId.cs" />
